@@ -4,7 +4,7 @@
     <description>A plugin to assist in video editing tasks</description>
     <keywords>cordova,video,editing,transcoding,encoding</keywords>
     <repo>https://github.com/jbavari/cordova-plugin-video-editor.git</repo>
-    <license>MIT for iOS, GPL for Android, Apache 2.0 for Windows</license>
+    <license>MIT for iOS only </license>
 
 
     <js-module name="VideoEditor" src="www/VideoEditor.js">
@@ -18,22 +18,6 @@
     <engines>
         <engine name="cordova" version=">=3.0.0" />
     </engines>
-
-    <!-- android -->
-    <platform name="android">
-        <config-file target="config.xml" parent="/*">
-            <feature name="VideoEditor">
-                <param name="android-package" value="org.apache.cordova.videoeditor.VideoEditor" />
-            </feature>
-        </config-file>
-
-        <!-- add plugin class -->
-        <source-file src="src/android/VideoEditor.java" target-dir="src/org/apache/cordova/videoeditor" />
-        <source-file src="src/android/CustomAndroidFormatStrategy.java" target-dir="src/org/apache/cordova/videoeditor" />
-
-        <framework src="src/android/build.gradle" custom="true" type="gradleReference" />
-
-    </platform>
 
     <!-- ios -->
     <platform name="ios">
@@ -54,19 +38,4 @@
         <framework src="MediaPlayer.framework" />
         <framework src="CoreVideo.framework" />
     </platform>
-
-    <!-- Windows 8 -->
-    <platform name="windows8">
-        <js-module src="src/windows8/VideoEditorProxy.js" name="VideoEditorProxy">
-            <merges target="" />
-        </js-module>
-    </platform>
-
-    <!-- Windows -->
-    <platform name="windows">
-        <js-module src="src/windows/VideoEditorProxy.js" name="VideoEditorProxy">
-            <merges target="" />
-        </js-module>
-    </platform>
-
 </plugin>
